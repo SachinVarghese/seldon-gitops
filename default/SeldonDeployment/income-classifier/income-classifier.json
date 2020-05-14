@@ -15,14 +15,15 @@
             {
                 "name": "default",
                 "graph": {
-                    "name": "income-classifier-container",
+                    "name": "income-classifier-canary",
                     "type": "MODEL",
-                    "implementation": "UNKNOWN_IMPLEMENTATION",
+                    "implementation": "SKLEARN_SERVER",
                     "endpoint": {
                         "service_host": "localhost",
-                        "service_port": 9001,
+                        "service_port": 9000,
                         "type": "REST"
                     },
+                    "modelUri": "gs://seldon-models/sklearn/income/model",
                     "logger": {
                         "mode": "all"
                     }
@@ -30,28 +31,18 @@
                 "componentSpecs": [
                     {
                         "metadata": {
-                            "creationTimestamp": "2020-05-14T15:28:50Z"
+                            "creationTimestamp": "2020-05-14T13:45:54Z"
                         },
                         "spec": {
                             "containers": [
                                 {
-                                    "name": "income-classifier-container",
-                                    "image": "seldonio/mock_classifier:1.0",
+                                    "name": "income-classifier-canary",
+                                    "image": "seldonio/sklearnserver_rest:0.3",
                                     "ports": [
                                         {
                                             "name": "metrics",
                                             "containerPort": 6000,
                                             "protocol": "TCP"
-                                        }
-                                    ],
-                                    "env": [
-                                        {
-                                            "name": "sadsad",
-                                            "value": "sdasd"
-                                        },
-                                        {
-                                            "name": "dsffsdf",
-                                            "value": "dfdfdsf"
                                         }
                                     ],
                                     "resources": {},
