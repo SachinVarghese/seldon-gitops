@@ -60,55 +60,7 @@
                     "version": "canary"
                 },
                 "svcOrchSpec": {},
-                "traffic": 90
-            },
-            {
-                "name": "canary",
-                "graph": {
-                    "name": "income-classifier-canary",
-                    "implementation": "SKLEARN_SERVER",
-                    "endpoint": {
-                        "type": "REST"
-                    },
-                    "parameters": [
-                        {
-                            "name": "rttrtr",
-                            "value": "ytryry",
-                            "type": "STRING"
-                        },
-                        {
-                            "name": "iuoiuo",
-                            "value": "oiuuouou",
-                            "type": "STRING"
-                        }
-                    ],
-                    "modelUri": "gs://seldon-models/sklearn/income/model",
-                    "logger": {
-                        "mode": "all"
-                    }
-                },
-                "componentSpecs": [
-                    {
-                        "metadata": {
-                            "creationTimestamp": "2020-05-14T13:33:14Z"
-                        },
-                        "spec": {
-                            "containers": [
-                                {
-                                    "name": "income-classifier-canary",
-                                    "resources": {}
-                                }
-                            ]
-                        }
-                    }
-                ],
-                "replicas": 1,
-                "annotations": {
-                    "seldon.io/canary": "true"
-                },
-                "engineResources": {},
-                "svcOrchSpec": {},
-                "traffic": 10
+                "traffic": 100
             }
         ],
         "annotations": {
