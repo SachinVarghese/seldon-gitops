@@ -4,10 +4,7 @@
     "metadata": {
         "name": "income-classifier",
         "namespace": "default",
-        "creationTimestamp": null,
-        "labels": {
-            "app.kubernetes.io/instance": "seldon-gitops-default"
-        }
+        "creationTimestamp": null
     },
     "spec": {
         "name": "income-classifier",
@@ -63,7 +60,53 @@
                     "version": "default"
                 },
                 "svcOrchSpec": {},
-                "traffic": 100
+                "traffic": 90
+            },
+            {
+                "name": "canary",
+                "graph": {
+                    "name": "income-classifier-container",
+                    "type": "MODEL",
+                    "endpoint": {
+                        "type": "REST"
+                    },
+                    "logger": {
+                        "mode": "all"
+                    }
+                },
+                "componentSpecs": [
+                    {
+                        "metadata": {
+                            "creationTimestamp": "2020-05-14T15:28:50Z"
+                        },
+                        "spec": {
+                            "containers": [
+                                {
+                                    "name": "income-classifier-container",
+                                    "image": "seldonio/mock_classifier:1.0",
+                                    "env": [
+                                        {
+                                            "name": "sadsad",
+                                            "value": "sdasd"
+                                        },
+                                        {
+                                            "name": "dsffsdf",
+                                            "value": "dfdfdsf"
+                                        }
+                                    ],
+                                    "resources": {}
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "replicas": 1,
+                "annotations": {
+                    "seldon.io/canary": "true"
+                },
+                "engineResources": {},
+                "svcOrchSpec": {},
+                "traffic": 10
             }
         ],
         "annotations": {
