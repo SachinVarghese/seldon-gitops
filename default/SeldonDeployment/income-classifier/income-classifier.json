@@ -4,7 +4,10 @@
     "metadata": {
         "name": "income-classifier",
         "namespace": "default",
-        "creationTimestamp": null
+        "creationTimestamp": null,
+        "labels": {
+            "app.kubernetes.io/instance": "seldon-gitops-default"
+        }
     },
     "spec": {
         "name": "income-classifier",
@@ -12,15 +15,14 @@
             {
                 "name": "default",
                 "graph": {
-                    "name": "income-classifier-canary",
+                    "name": "income-classifier-container",
                     "type": "MODEL",
-                    "implementation": "SKLEARN_SERVER",
+                    "implementation": "UNKNOWN_IMPLEMENTATION",
                     "endpoint": {
                         "service_host": "localhost",
-                        "service_port": 9000,
+                        "service_port": 9001,
                         "type": "REST"
                     },
-                    "modelUri": "gs://seldon-models/sklearn/income/model",
                     "logger": {
                         "mode": "all"
                     }
@@ -28,18 +30,28 @@
                 "componentSpecs": [
                     {
                         "metadata": {
-                            "creationTimestamp": "2020-05-14T13:45:54Z"
+                            "creationTimestamp": "2020-05-14T15:28:50Z"
                         },
                         "spec": {
                             "containers": [
                                 {
-                                    "name": "income-classifier-canary",
-                                    "image": "seldonio/sklearnserver_rest:0.3",
+                                    "name": "income-classifier-container",
+                                    "image": "seldonio/mock_classifier:1.0",
                                     "ports": [
                                         {
                                             "name": "metrics",
                                             "containerPort": 6000,
                                             "protocol": "TCP"
+                                        }
+                                    ],
+                                    "env": [
+                                        {
+                                            "name": "sadsad",
+                                            "value": "sdasd"
+                                        },
+                                        {
+                                            "name": "dsffsdf",
+                                            "value": "dfdfdsf"
                                         }
                                     ],
                                     "resources": {},
@@ -60,53 +72,7 @@
                     "version": "default"
                 },
                 "svcOrchSpec": {},
-                "traffic": 90
-            },
-            {
-                "name": "canary",
-                "graph": {
-                    "name": "income-classifier-container",
-                    "type": "MODEL",
-                    "endpoint": {
-                        "type": "REST"
-                    },
-                    "logger": {
-                        "mode": "all"
-                    }
-                },
-                "componentSpecs": [
-                    {
-                        "metadata": {
-                            "creationTimestamp": "2020-05-14T15:28:50Z"
-                        },
-                        "spec": {
-                            "containers": [
-                                {
-                                    "name": "income-classifier-container",
-                                    "image": "seldonio/mock_classifier:1.0",
-                                    "env": [
-                                        {
-                                            "name": "sadsad",
-                                            "value": "sdasd"
-                                        },
-                                        {
-                                            "name": "dsffsdf",
-                                            "value": "dfdfdsf"
-                                        }
-                                    ],
-                                    "resources": {}
-                                }
-                            ]
-                        }
-                    }
-                ],
-                "replicas": 1,
-                "annotations": {
-                    "seldon.io/canary": "true"
-                },
-                "engineResources": {},
-                "svcOrchSpec": {},
-                "traffic": 10
+                "traffic": 100
             }
         ],
         "annotations": {
