@@ -4,7 +4,10 @@
     "metadata": {
         "name": "mock-test",
         "namespace": "default",
-        "creationTimestamp": null
+        "creationTimestamp": null,
+        "labels": {
+            "app.kubernetes.io/instance": "seldon-gitops-default"
+        }
     },
     "spec": {
         "name": "mock_test",
@@ -27,7 +30,7 @@
                 "componentSpecs": [
                     {
                         "metadata": {
-                            "creationTimestamp": "2020-05-27T12:51:29Z"
+                            "creationTimestamp": "2020-05-27T12:54:06Z"
                         },
                         "spec": {
                             "containers": [
@@ -43,12 +46,12 @@
                                     ],
                                     "env": [
                                         {
-                                            "name": "asdsad",
-                                            "value": "dasdsad"
+                                            "name": "TEst",
+                                            "value": "asdad"
                                         },
                                         {
-                                            "name": "dsfdsf",
-                                            "value": "dsfdsf"
+                                            "name": "asdd",
+                                            "value": "iyuiyuiyui"
                                         }
                                     ],
                                     "resources": {},
@@ -69,53 +72,7 @@
                     "version": "default"
                 },
                 "svcOrchSpec": {},
-                "traffic": 90
-            },
-            {
-                "name": "canary",
-                "graph": {
-                    "name": "mock-test-container",
-                    "type": "MODEL",
-                    "endpoint": {
-                        "type": "REST"
-                    },
-                    "logger": {
-                        "mode": "all"
-                    }
-                },
-                "componentSpecs": [
-                    {
-                        "metadata": {
-                            "creationTimestamp": "2020-05-27T12:54:06Z"
-                        },
-                        "spec": {
-                            "containers": [
-                                {
-                                    "name": "mock-test-container",
-                                    "image": "seldonio/mock_classifier:1.0",
-                                    "env": [
-                                        {
-                                            "name": "TEst",
-                                            "value": "asdad"
-                                        },
-                                        {
-                                            "name": "asdd",
-                                            "value": "iyuiyuiyui"
-                                        }
-                                    ],
-                                    "resources": {}
-                                }
-                            ]
-                        }
-                    }
-                ],
-                "replicas": 1,
-                "annotations": {
-                    "seldon.io/canary": "true"
-                },
-                "engineResources": {},
-                "svcOrchSpec": {},
-                "traffic": 10
+                "traffic": 100
             }
         ],
         "annotations": {
