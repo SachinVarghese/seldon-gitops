@@ -2,7 +2,7 @@
     "kind": "SeldonDeployment",
     "apiVersion": "machinelearning.seldon.io/v1alpha2",
     "metadata": {
-        "name": "mock_test",
+        "name": "mock-test",
         "namespace": "default",
         "creationTimestamp": null
     },
@@ -12,7 +12,7 @@
             {
                 "name": "default",
                 "graph": {
-                    "name": "mock_test-container",
+                    "name": "mock-test-container",
                     "type": "MODEL",
                     "endpoint": {
                         "type": "REST"
@@ -29,7 +29,7 @@
                         "spec": {
                             "containers": [
                                 {
-                                    "name": "mock_test-container",
+                                    "name": "mock-test-container",
                                     "image": "seldonio/mock_classifier:1.0",
                                     "resources": {}
                                 }
