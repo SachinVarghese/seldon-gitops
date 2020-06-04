@@ -44,13 +44,6 @@
                                             "containerPort": 6000,
                                             "protocol": "TCP"
                                         }
-                                    ],
-                                    "resources": {},
-                                    "volumeMounts": [
-                                        {
-                                            "name": "podinfo",
-                                            "mountPath": "/etc/podinfo"
-                                        }
                                     ]
                                 }
                             ]
