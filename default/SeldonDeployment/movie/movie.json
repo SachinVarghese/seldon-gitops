@@ -38,7 +38,6 @@
                     }
                 ],
                 "replicas": 1,
-                "engineResources": {},
                 "traffic": 100
             }
         ],
