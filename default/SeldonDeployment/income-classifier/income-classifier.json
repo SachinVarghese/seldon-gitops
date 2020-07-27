@@ -51,7 +51,6 @@
                     }
                 ],
                 "replicas": 1,
-                "engineResources": {},
                 "labels": {
                     "version": "default"
                 },
