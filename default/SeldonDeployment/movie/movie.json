@@ -46,6 +46,5 @@
         },
         "protocol": "seldon",
         "transport": "rest"
-    },
-    "status": {}
+    }
 }
