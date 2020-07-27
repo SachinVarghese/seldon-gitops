@@ -39,7 +39,6 @@
                 ],
                 "replicas": 1,
                 "engineResources": {},
-                "svcOrchSpec": {},
                 "traffic": 100
             }
         ],
