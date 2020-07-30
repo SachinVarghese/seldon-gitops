@@ -54,6 +54,7 @@
                 "labels": {
                     "version": "default"
                 },
+                "svcOrchSpec": {},
                 "traffic": 100,
                 "explainer": {
                     "type": "AnchorTabular",
@@ -70,5 +71,6 @@
         },
         "protocol": "seldon",
         "transport": "rest"
-    }
+    },
+    "status": {}
 }
