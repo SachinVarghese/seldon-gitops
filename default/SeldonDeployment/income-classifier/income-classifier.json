@@ -51,9 +51,6 @@
                     }
                 ],
                 "replicas": 1,
-                "labels": {
-                    "version": "default"
-                },
                 "traffic": 100,
                 "explainer": {
                     "type": "AnchorTabular",
