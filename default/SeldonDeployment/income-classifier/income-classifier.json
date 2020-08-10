@@ -2,7 +2,7 @@
     "kind": "SeldonDeployment",
     "apiVersion": "machinelearning.seldon.io/v1alpha2",
     "metadata": {
-        "name": "income-classifier",
+        "name": "3income-classifier",
         "namespace": "default",
         "creationTimestamp": null,
         "labels": {
@@ -56,8 +56,7 @@
                     "type": "AnchorTabular",
                     "modelUri": "gs://seldon-models/sklearn/income/explainer",
                     "containerSpec": {
-                        "name": "",
-                        "resources": {}
+                        "name": ""
                     }
                 }
             }
