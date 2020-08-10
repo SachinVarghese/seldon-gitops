@@ -2,7 +2,7 @@
     "kind": "SeldonDeployment",
     "apiVersion": "machinelearning.seldon.io/v1alpha2",
     "metadata": {
-        "name": "3income-classifier",
+        "name": "income-classifier",
         "namespace": "default",
         "creationTimestamp": null,
         "labels": {
