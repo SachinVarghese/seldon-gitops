@@ -67,7 +67,7 @@
                 "traffic": 90
             },
             {
-                "name": "default",
+                "name": "canary",
                 "graph": {
                     "name": "movie-container",
                     "type": "MODEL",
