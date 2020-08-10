@@ -5,9 +5,14 @@
         "name": "income-classifier",
         "namespace": "default",
         "creationTimestamp": null,
+        "deletionTimestamp": "2020-08-10T10:42:07Z",
+        "deletionGracePeriodSeconds": 0,
         "labels": {
             "app.kubernetes.io/instance": "seldon-gitops-default"
-        }
+        },
+        "finalizers": [
+            "foregroundDeletion"
+        ]
     },
     "spec": {
         "name": "income-classifier",
@@ -44,6 +49,13 @@
                                             "containerPort": 6000,
                                             "protocol": "TCP"
                                         }
+                                    ],
+                                    "resources": {},
+                                    "volumeMounts": [
+                                        {
+                                            "name": "seldon-podinfo",
+                                            "mountPath": "/etc/podinfo"
+                                        }
                                     ]
                                 }
                             ]
@@ -51,19 +63,12 @@
                     }
                 ],
                 "replicas": 1,
+                "engineResources": {},
                 "labels": {
                     "version": "default"
                 },
                 "svcOrchSpec": {},
-                "traffic": 100,
-                "explainer": {
-                    "type": "AnchorTabular",
-                    "modelUri": "gs://seldon-models/sklearn/income/explainer",
-                    "containerSpec": {
-                        "name": "",
-                        "resources": {}
-                    }
-                }
+                "traffic": 100
             }
         ],
         "annotations": {
