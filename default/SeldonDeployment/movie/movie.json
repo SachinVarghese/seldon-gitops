@@ -122,7 +122,7 @@
                 "traffic": 10
             },
             {
-                "name": "shadow",
+                "name": "default",
                 "graph": {
                     "name": "movie-container",
                     "implementation": "SKLEARN_SERVER",
