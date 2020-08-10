@@ -3,7 +3,8 @@
     "apiVersion": "machinelearning.seldon.io/v1alpha2",
     "metadata": {
         "name": "movie",
-        "namespace": "default"
+        "namespace": "default",
+        "creationTimestamp": null
     },
     "spec": {
         "name": "movie",
