@@ -4,7 +4,10 @@
     "metadata": {
         "name": "income",
         "namespace": "default",
-        "creationTimestamp": null
+        "creationTimestamp": null,
+        "labels": {
+            "app.kubernetes.io/instance": "seldon-gitops-default"
+        }
     },
     "spec": {
         "name": "income",
@@ -45,7 +48,7 @@
                                     "resources": {},
                                     "volumeMounts": [
                                         {
-                                            "name": "podinfo",
+                                            "name": "seldon-podinfo",
                                             "mountPath": "/etc/podinfo"
                                         }
                                     ]
@@ -60,43 +63,7 @@
                     "version": "default"
                 },
                 "svcOrchSpec": {},
-                "traffic": 90
-            },
-            {
-                "name": "canary",
-                "graph": {
-                    "name": "income-canary",
-                    "implementation": "TENSORFLOW_SERVER",
-                    "endpoint": {
-                        "type": "REST"
-                    },
-                    "modelUri": "gs://seldon-models/sklearn/income/model",
-                    "logger": {
-                        "mode": "all"
-                    }
-                },
-                "componentSpecs": [
-                    {
-                        "metadata": {
-                            "creationTimestamp": "2020-04-28T15:48:18Z"
-                        },
-                        "spec": {
-                            "containers": [
-                                {
-                                    "name": "income-canary",
-                                    "resources": {}
-                                }
-                            ]
-                        }
-                    }
-                ],
-                "replicas": 1,
-                "annotations": {
-                    "seldon.io/canary": "true"
-                },
-                "engineResources": {},
-                "svcOrchSpec": {},
-                "traffic": 10
+                "traffic": 100
             }
         ],
         "annotations": {
