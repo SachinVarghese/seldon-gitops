@@ -37,9 +37,9 @@
                                     "io.seldon.serving.inference.drift",
                                     "--event_source",
                                     "io.seldon.serving.seldondeployment-cifar10-drift",
+                                    "DriftDetector",
                                     "--drift_batch_size",
-                                    "10",
-                                    "DriftDetector"
+                                    "1"
                                 ],
                                 "resources": {}
                             }
