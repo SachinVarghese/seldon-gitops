@@ -37,8 +37,6 @@
                                     "io.seldon.serving.inference.outlier",
                                     "--event_source",
                                     "io.seldon.serving.seldondeployment-cifar10-outlier",
-                                    "--drift_batch_size",
-                                    "",
                                     "OutlierDetector"
                                 ],
                                 "resources": {}
