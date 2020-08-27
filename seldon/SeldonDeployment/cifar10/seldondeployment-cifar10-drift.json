@@ -38,7 +38,7 @@
                                     "--event_source",
                                     "io.seldon.serving.seldondeployment-cifar10-drift",
                                     "--drift_batch_size",
-                                    "1001",
+                                    "1000",
                                     "DriftDetector"
                                 ],
                                 "resources": {}
