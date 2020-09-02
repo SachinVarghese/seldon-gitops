@@ -2,7 +2,7 @@
     "kind": "SeldonDeployment",
     "apiVersion": "machinelearning.seldon.io/v1alpha2",
     "metadata": {
-        "name": "iris-classifier",
+        "name": "iris",
         "namespace": "default",
         "creationTimestamp": null,
         "labels": {
@@ -15,7 +15,7 @@
             {
                 "name": "default",
                 "graph": {
-                    "name": "iris-classifier-container",
+                    "name": "iris-container",
                     "type": "MODEL",
                     "implementation": "SKLEARN_SERVER",
                     "endpoint": {
@@ -36,7 +36,7 @@
                         "spec": {
                             "containers": [
                                 {
-                                    "name": "iris-classifier-container",
+                                    "name": "iris-container",
                                     "image": "seldonio/sklearnserver_rest:1.2.2",
                                     "ports": [
                                         {
@@ -68,7 +68,7 @@
             {
                 "name": "canary",
                 "graph": {
-                    "name": "iris-classifier-container",
+                    "name": "iris-container",
                     "implementation": "XGBOOST_SERVER",
                     "endpoint": {
                         "type": "REST"
@@ -86,7 +86,7 @@
                         "spec": {
                             "containers": [
                                 {
-                                    "name": "iris-classifier-container",
+                                    "name": "iris-container",
                                     "resources": {}
                                 }
                             ]
