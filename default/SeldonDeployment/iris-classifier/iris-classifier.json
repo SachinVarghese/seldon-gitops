@@ -10,7 +10,7 @@
         }
     },
     "spec": {
-        "name": "iris-classifier",
+        "name": "iris",
         "predictors": [
             {
                 "name": "default",
