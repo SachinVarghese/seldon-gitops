@@ -2,7 +2,7 @@
     "kind": "SeldonDeployment",
     "apiVersion": "machinelearning.seldon.io/v1alpha2",
     "metadata": {
-        "name": "income",
+        "name": "income-classifier",
         "namespace": "default",
         "creationTimestamp": null,
         "labels": {
@@ -10,12 +10,12 @@
         }
     },
     "spec": {
-        "name": "income",
+        "name": "income-classifier",
         "predictors": [
             {
                 "name": "default",
                 "graph": {
-                    "name": "income-default",
+                    "name": "income-classifier-default",
                     "type": "MODEL",
                     "implementation": "SKLEARN_SERVER",
                     "endpoint": {
@@ -36,7 +36,7 @@
                         "spec": {
                             "containers": [
                                 {
-                                    "name": "income-default",
+                                    "name": "income-classifier-default",
                                     "image": "seldonio/sklearnserver_rest:0.2",
                                     "ports": [
                                         {
