@@ -2,7 +2,7 @@
     "kind": "SeldonDeployment",
     "apiVersion": "machinelearning.seldon.io/v1alpha2",
     "metadata": {
-        "name": "iris",
+        "name": "iris-classifier",
         "namespace": "default",
         "creationTimestamp": null,
         "labels": {
@@ -10,12 +10,12 @@
         }
     },
     "spec": {
-        "name": "iris",
+        "name": "iris-classifier",
         "predictors": [
             {
                 "name": "default",
                 "graph": {
-                    "name": "iris-container",
+                    "name": "iris-classifier-container",
                     "implementation": "SKLEARN_SERVER",
                     "endpoint": {
                         "type": "REST"
@@ -33,7 +33,7 @@
                         "spec": {
                             "containers": [
                                 {
-                                    "name": "iris-container",
+                                    "name": "iris-classifier-container",
                                     "resources": {}
                                 }
                             ]
