@@ -39,7 +39,7 @@
                                     "io.seldon.serving.seldondeployment-cifar10-drift",
                                     "DriftDetector",
                                     "--drift_batch_size",
-                                    "2"
+                                    "1"
                                 ],
                                 "resources": {}
                             }
