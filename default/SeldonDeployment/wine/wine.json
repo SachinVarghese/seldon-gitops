@@ -71,7 +71,15 @@
                     "version": "default"
                 },
                 "svcOrchSpec": {},
-                "traffic": 100
+                "traffic": 100,
+                "explainer": {
+                    "type": "KernelShap",
+                    "modelUri": "gs://seldon-models/sklearn/wine/kernel_shap_py36",
+                    "containerSpec": {
+                        "name": "",
+                        "resources": {}
+                    }
+                }
             }
         ],
         "annotations": {
