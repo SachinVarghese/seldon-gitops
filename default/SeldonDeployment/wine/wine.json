@@ -1,0 +1,63 @@
+{
+    "kind": "SeldonDeployment",
+    "apiVersion": "machinelearning.seldon.io/v1alpha2",
+    "metadata": {
+        "name": "wine",
+        "namespace": "default",
+        "creationTimestamp": null,
+        "labels": {
+            "fluentd": "true"
+        }
+    },
+    "spec": {
+        "name": "wine",
+        "predictors": [
+            {
+                "name": "default",
+                "graph": {
+                    "name": "wine-container",
+                    "implementation": "SKLEARN_SERVER",
+                    "endpoint": {
+                        "type": "REST"
+                    },
+                    "parameters": [
+                        {
+                            "name": "method",
+                            "value": "decision_function",
+                            "type": "STRING"
+                        }
+                    ],
+                    "modelUri": "gs://seldon-models/sklearn/wine/model-py36-0.23.2",
+                    "logger": {
+                        "mode": "all"
+                    }
+                },
+                "componentSpecs": [
+                    {
+                        "metadata": {
+                            "creationTimestamp": "2020-09-22T09:49:17Z"
+                        },
+                        "spec": {
+                            "containers": [
+                                {
+                                    "name": "wine-container",
+                                    "resources": {}
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "replicas": 1,
+                "engineResources": {},
+                "svcOrchSpec": {},
+                "traffic": 100
+            }
+        ],
+        "annotations": {
+            "seldon.io/engine-seldon-log-messages-externally": "true"
+        },
+        "protocol": "seldon",
+        "transport": "rest"
+    },
+    "status": {}
+}
