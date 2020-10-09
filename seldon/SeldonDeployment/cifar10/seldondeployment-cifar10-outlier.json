@@ -23,7 +23,7 @@
                         "containers": [
                             {
                                 "name": "outlier-detector",
-                                "image": "seldonio/alibi-detect-server:0.0.1",
+                                "image": "seldonio/alibi-detect-server:1.2.3-dev_20200827112607",
                                 "args": [
                                     "--model_name",
                                     "cifar10od",
