@@ -1,0 +1,34 @@
+{
+    "kind": "InferenceService",
+    "apiVersion": "serving.kubeflow.org/v1alpha2",
+    "metadata": {
+        "name": "blah-iris",
+        "namespace": "default",
+        "creationTimestamp": null
+    },
+    "spec": {
+        "default": {
+            "predictor": {
+                "sklearn": {
+                    "storageUri": "gs://kfserving-samples/models/sklearn/iris",
+                    "runtimeVersion": "v0.3.0",
+                    "resources": {
+                        "limits": {
+                            "cpu": "1",
+                            "memory": "2Gi"
+                        },
+                        "requests": {
+                            "cpu": "1",
+                            "memory": "2Gi"
+                        }
+                    }
+                },
+                "logger": {
+                    "url": "http://default-broker.seldon-logs",
+                    "mode": "all"
+                }
+            }
+        }
+    },
+    "status": {}
+}
