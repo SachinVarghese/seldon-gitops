@@ -5,7 +5,7 @@ metadata:
   labels:
     fluentd: "true"
   name: iris
-  namespace: seldon
+  namespace: yaml-test
 spec:
   annotations:
     seldon.io/engine-seldon-log-messages-externally: "true"
