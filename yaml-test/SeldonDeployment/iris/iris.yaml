@@ -9,7 +9,6 @@ metadata:
 spec:
   annotations:
     seldon.io/engine-seldon-log-messages-externally: "true"
-  name: iris
   predictors:
   - componentSpecs:
     - metadata:
