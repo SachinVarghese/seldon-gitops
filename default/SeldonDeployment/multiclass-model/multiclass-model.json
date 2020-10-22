@@ -1,0 +1,70 @@
+{
+    "apiVersion": "machinelearning.seldon.io/v1",
+    "kind": "SeldonDeployment",
+    "metadata": {
+        "generation": 1,
+        "name": "multiclass-model",
+        "namespace": "default",
+        "resourceVersion": "1522089",
+        "selfLink": "/apis/machinelearning.seldon.io/v1/namespaces/default/seldondeployments/multiclass-model",
+        "uid": "a930a02f-fce9-463d-aa26-72a340add4b5"
+    },
+    "spec": {
+        "predictors": [
+            {
+                "componentSpecs": [
+                    {
+                        "metadata": {
+                            "creationTimestamp": "2020-10-22T12:40:26Z"
+                        },
+                        "spec": {
+                            "containers": [
+                                {
+                                    "image": "seldonio/sklearnserver_rest:1.3.0-dev",
+                                    "name": "classifier",
+                                    "ports": [
+                                        {
+                                            "containerPort": 6000,
+                                            "name": "metrics",
+                                            "protocol": "TCP"
+                                        }
+                                    ],
+                                    "resources": {},
+                                    "volumeMounts": [
+                                        {
+                                            "mountPath": "/etc/podinfo",
+                                            "name": "seldon-podinfo"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "engineResources": {},
+                "graph": {
+                    "endpoint": {
+                        "service_host": "localhost",
+                        "service_port": 9000,
+                        "type": "REST"
+                    },
+                    "implementation": "SKLEARN_SERVER",
+                    "logger": {
+                        "mode": "all",
+                        "url": "http://seldon-multiclass-model-metrics.seldon.svc.cluster.local:80/"
+                    },
+                    "modelUri": "gs://seldon-models/sklearn/iris",
+                    "name": "classifier",
+                    "type": "MODEL"
+                },
+                "labels": {
+                    "version": "default"
+                },
+                "name": "default",
+                "replicas": 1,
+                "svcOrchSpec": {}
+            }
+        ]
+    },
+    "status": {}
+}
