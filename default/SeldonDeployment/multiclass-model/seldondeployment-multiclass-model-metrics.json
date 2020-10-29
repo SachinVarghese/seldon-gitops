@@ -32,6 +32,8 @@
                                 "args": [
                                     "--model_name",
                                     "multiclassserver",
+                                    "--http_port",
+                                    "8080",
                                     "--protocol",
                                     "seldonfeedback.http",
                                     "--storage_uri",
@@ -46,7 +48,7 @@
                                 ],
                                 "ports": [
                                     {
-                                        "containerPort": 0,
+                                        "containerPort": 8080,
                                         "protocol": "TCP"
                                     }
                                 ],
