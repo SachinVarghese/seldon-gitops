@@ -56,7 +56,7 @@
                                     {
                                         "name": "SELDON_DEPLOYMENT_ID",
                                         "value": "multiclass-model"
-                                    },
+                                    }
                                 ],
                                 "resources": {},
                                 "securityContext": {
