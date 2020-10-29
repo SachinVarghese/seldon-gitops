@@ -20,7 +20,7 @@
                         },
                         "annotations": {
                             "prometheus.io/path": "/v1/metrics",
-                            "prometheus.io/port": "8080",
+                            "prometheus.io/port": "",
                             "prometheus.io/scrape": "true"
                         }
                     },
