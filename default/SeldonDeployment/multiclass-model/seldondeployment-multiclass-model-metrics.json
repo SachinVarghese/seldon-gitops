@@ -34,7 +34,7 @@
                                     "--protocol",
                                     "seldonfeedback.http",
                                     "--storage_uri",
-                                    "adserver.cm_models.multiclass_one_hot.MulticlassOneHot",
+                                    "adserver.cm_models.multiclass_one_hot.MulticlassOneHo",
                                     "--reply_url",
                                     "http://seldon-request-logger.default",
                                     "--event_type",
@@ -68,7 +68,10 @@
                                         "value": "default"
                                     }
                                 ],
-                                "resources": {}
+                                "resources": {},
+                                "securityContext": {
+                                    "runAsUser": 8888
+                                }
                             }
                         ]
                     }
