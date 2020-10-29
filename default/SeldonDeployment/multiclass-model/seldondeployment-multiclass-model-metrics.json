@@ -20,6 +20,7 @@
                         },
                         "annotations": {
                             "prometheus.io/path": "/v1/metrics",
+                            "prometheus.io/port": "",
                             "prometheus.io/scrape": "true"
                         }
                     },
@@ -45,8 +46,7 @@
                                 ],
                                 "ports": [
                                     {
-                                        "name": "metrics",
-                                        "containerPort": 8080,
+                                        "containerPort": 0,
                                         "protocol": "TCP"
                                     }
                                 ],
