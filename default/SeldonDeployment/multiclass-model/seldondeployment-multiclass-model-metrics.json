@@ -92,7 +92,7 @@
             "spec": {
                 "filter": {
                     "sourceAndType": {
-                        "type": "io.seldon.serving.feedback.request"
+                        "type": "io.seldon.serving.feedback"
                     }
                 },
                 "subscriber": {
