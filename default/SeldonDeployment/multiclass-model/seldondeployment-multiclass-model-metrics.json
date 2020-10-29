@@ -57,18 +57,6 @@
                                         "name": "SELDON_DEPLOYMENT_ID",
                                         "value": "multiclass-model"
                                     },
-                                    {
-                                        "name": "PREDICTIVE_UNIT_ID",
-                                        "value": "multiclass-model-container"
-                                    },
-                                    {
-                                        "name": "PREDICTIVE_UNIT_ID",
-                                        "value": "alibi-detect-server:1.4.0"
-                                    },
-                                    {
-                                        "name": "PREDICTOR_ID",
-                                        "value": "default"
-                                    }
                                 ],
                                 "resources": {},
                                 "securityContext": {
