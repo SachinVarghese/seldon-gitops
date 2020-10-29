@@ -34,7 +34,7 @@
                                     "--protocol",
                                     "seldonfeedback.http",
                                     "--storage_uri",
-                                    "adserver.cm_models.multiclass_one_hot.MulticlassOneHo",
+                                    "adserver.cm_models.multiclass_one_hot.MulticlassOneHot",
                                     "--reply_url",
                                     "http://seldon-request-logger.default",
                                     "--event_type",
