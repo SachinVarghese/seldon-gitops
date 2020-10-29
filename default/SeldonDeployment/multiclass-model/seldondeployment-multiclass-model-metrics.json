@@ -17,6 +17,10 @@
                         "creationTimestamp": null,
                         "labels": {
                             "fluentd": "true"
+                        },
+                        "annotations": {
+                            "prometheus.io/path": "/v1/metrics",
+                            "prometheus.io/scrape": "true"
                         }
                     },
                     "spec": {
@@ -28,7 +32,7 @@
                                     "--model_name",
                                     "multiclassserver",
                                     "--protocol",
-                                    "tensorflow.http",
+                                    "seldonfeedback.http",
                                     "--storage_uri",
                                     "adserver.cm_models.multiclass_one_hot.MulticlassOneHot",
                                     "--reply_url",
@@ -38,6 +42,31 @@
                                     "--event_source",
                                     "io.seldon.serving.seldondeployment-multiclass-model-metrics",
                                     "MetricsServer"
+                                ],
+                                "ports": [
+                                    {
+                                        "name": "metrics",
+                                        "containerPort": 8080,
+                                        "protocol": "TCP"
+                                    }
+                                ],
+                                "env": [
+                                    {
+                                        "name": "SELDON_DEPLOYMENT_ID",
+                                        "value": "multiclass-model"
+                                    },
+                                    {
+                                        "name": "PREDICTIVE_UNIT_ID",
+                                        "value": "multiclass-model-container"
+                                    },
+                                    {
+                                        "name": "PREDICTIVE_UNIT_ID",
+                                        "value": "alibi-detect-server:1.4.0"
+                                    },
+                                    {
+                                        "name": "PREDICTOR_ID",
+                                        "value": "default"
+                                    }
                                 ],
                                 "resources": {}
                             }
