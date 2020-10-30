@@ -22,7 +22,6 @@
                     },
                     "modelUri": "gs://seldon-models/sklearn/iris",
                     "logger": {
-                        "url": "http://default-broker",
                         "mode": "all"
                     }
                 },
