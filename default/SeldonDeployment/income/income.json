@@ -6,6 +6,7 @@
         "namespace": "default",
         "creationTimestamp": null,
         "labels": {
+            "app.kubernetes.io/instance": "seldon-gitops-default",
             "fluentd": "true"
         }
     },
@@ -31,13 +32,13 @@
                 "componentSpecs": [
                     {
                         "metadata": {
-                            "creationTimestamp": "2020-09-17T12:44:19Z"
+                            "creationTimestamp": "2020-11-04T15:06:18Z"
                         },
                         "spec": {
                             "containers": [
                                 {
                                     "name": "income-container",
-                                    "image": "seldonio/sklearnserver_rest:1.2.3-dev",
+                                    "image": "seldonio/sklearnserver_rest:1.4.0",
                                     "ports": [
                                         {
                                             "name": "metrics",
@@ -58,56 +59,15 @@
                     }
                 ],
                 "replicas": 1,
+                "annotations": {
+                    "seldon.io/canary": "false"
+                },
                 "engineResources": {},
                 "labels": {
                     "version": "default"
                 },
                 "svcOrchSpec": {},
-                "traffic": 100,
-                "explainer": {
-                    "type": "AnchorTabular",
-                    "modelUri": "gs://seldon-models/sklearn/income/explainer-py36-0.5.2",
-                    "containerSpec": {
-                        "name": "",
-                        "resources": {}
-                    }
-                }
-            },
-            {
-                "name": "shadow",
-                "graph": {
-                    "name": "income-container",
-                    "implementation": "SKLEARN_SERVER",
-                    "endpoint": {
-                        "type": "REST"
-                    },
-                    "modelUri": "gs://seldon-models/sklearn/income/model-0.23.2",
-                    "logger": {
-                        "mode": "all"
-                    }
-                },
-                "componentSpecs": [
-                    {
-                        "metadata": {
-                            "creationTimestamp": "2020-11-04T15:06:18Z"
-                        },
-                        "spec": {
-                            "containers": [
-                                {
-                                    "name": "income-container",
-                                    "resources": {}
-                                }
-                            ]
-                        }
-                    }
-                ],
-                "replicas": 1,
-                "annotations": {
-                    "seldon.io/canary": "false"
-                },
-                "engineResources": {},
-                "svcOrchSpec": {},
-                "shadow": true
+                "traffic": 100
             }
         ],
         "annotations": {
