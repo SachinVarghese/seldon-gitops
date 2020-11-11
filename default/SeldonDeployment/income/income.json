@@ -24,7 +24,7 @@
                         "service_port": 9000,
                         "type": "REST"
                     },
-                    "modelUri": "gs://seldon-models/sklearn/income/model-0.23.2",
+                    "modelUri": "gs://seldon-models/sklearn/income/model",
                     "logger": {
                         "mode": "all"
                     }
@@ -32,13 +32,13 @@
                 "componentSpecs": [
                     {
                         "metadata": {
-                            "creationTimestamp": "2020-11-04T15:06:18Z"
+                            "creationTimestamp": "2020-09-17T12:44:19Z"
                         },
                         "spec": {
                             "containers": [
                                 {
                                     "name": "income-container",
-                                    "image": "seldonio/sklearnserver_rest:1.4.0",
+                                    "image": "seldonio/sklearnserver_rest:1.2.3-dev",
                                     "ports": [
                                         {
                                             "name": "metrics",
@@ -59,15 +59,20 @@
                     }
                 ],
                 "replicas": 1,
-                "annotations": {
-                    "seldon.io/canary": "false"
-                },
                 "engineResources": {},
                 "labels": {
                     "version": "default"
                 },
                 "svcOrchSpec": {},
-                "traffic": 100
+                "traffic": 100,
+                "explainer": {
+                    "type": "AnchorTabular",
+                    "modelUri": "gs://seldon-models/sklearn/income/explainer-py36-0.5.2",
+                    "containerSpec": {
+                        "name": "",
+                        "resources": {}
+                    }
+                }
             }
         ],
         "annotations": {
