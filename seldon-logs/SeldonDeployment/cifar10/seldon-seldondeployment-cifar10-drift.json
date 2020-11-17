@@ -22,7 +22,7 @@
                             "autoscaling.knative.dev/maxScale": "1",
                             "autoscaling.knative.dev/minScale": "1",
                             "prometheus.io/path": "/v1/metrics",
-                            "prometheus.io/port": "",
+                            "prometheus.io/port": "8080",
                             "prometheus.io/scrape": "true"
                         }
                     },
@@ -34,6 +34,8 @@
                                 "args": [
                                     "--model_name",
                                     "cifar10cd",
+                                    "--http_port",
+                                    "8080",
                                     "--protocol",
                                     "tensorflow.http",
                                     "--storage_uri",
@@ -44,11 +46,13 @@
                                     "io.seldon.serving.inference.drift",
                                     "--event_source",
                                     "io.seldon.serving.seldon-seldondeployment-cifar10-drift",
-                                    "DriftDetector"
+                                    "DriftDetector",
+                                    "--drift_batch_size",
+                                    "1"
                                 ],
                                 "ports": [
                                     {
-                                        "containerPort": 0,
+                                        "containerPort": 8080,
                                         "protocol": "TCP"
                                     }
                                 ],
