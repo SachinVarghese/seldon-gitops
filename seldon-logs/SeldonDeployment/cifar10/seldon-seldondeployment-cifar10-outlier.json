@@ -27,6 +27,8 @@
                                 "args": [
                                     "--model_name",
                                     "cifar10",
+                                    "--http_port",
+                                    "8080",
                                     "--protocol",
                                     "tensorflow.http",
                                     "--storage_uri",
