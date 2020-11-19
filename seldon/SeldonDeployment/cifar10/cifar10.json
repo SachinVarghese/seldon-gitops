@@ -16,7 +16,7 @@
             {
                 "name": "default",
                 "graph": {
-                    "name": "cifar10",
+                    "name": "cifar10-container",
                     "type": "MODEL",
                     "implementation": "TENSORFLOW_SERVER",
                     "endpoint": {
@@ -37,7 +37,7 @@
                         "spec": {
                             "containers": [
                                 {
-                                    "name": "cifar10",
+                                    "name": "cifar10-container",
                                     "ports": [
                                         {
                                             "name": "metrics",
