@@ -30,7 +30,6 @@
                         "containers": [
                             {
                                 "name": "drift-detector",
-                                "image": "seldonio/alibi-detect-server:1.4.0",
                                 "args": [
                                     "--model_name",
                                     "cifar10cd",
@@ -48,7 +47,7 @@
                                     "io.seldon.serving.seldon-seldondeployment-cifar10-drift",
                                     "DriftDetector",
                                     "--drift_batch_size",
-                                    "2"
+                                    "1"
                                 ],
                                 "ports": [
                                     {
