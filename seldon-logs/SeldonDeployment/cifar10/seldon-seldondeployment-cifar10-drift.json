@@ -48,7 +48,7 @@
                                     "io.seldon.serving.seldon-seldondeployment-cifar10-drift",
                                     "DriftDetector",
                                     "--drift_batch_size",
-                                    "2"
+                                    "1"
                                 ],
                                 "ports": [
                                     {
