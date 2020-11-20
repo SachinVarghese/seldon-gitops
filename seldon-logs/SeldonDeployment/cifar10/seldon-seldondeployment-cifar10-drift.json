@@ -39,7 +39,7 @@
                                     "--protocol",
                                     "tensorflow.http",
                                     "--storage_uri",
-                                    "gs://seldon-models/alibi-detect/cd/ks/cifar10",
+                                    "gs://seldon-models/alibi-detect/cd/mmd/cifar10-0_4_3",
                                     "--reply_url",
                                     "http://seldon-request-logger.seldon-logs",
                                     "--event_type",
