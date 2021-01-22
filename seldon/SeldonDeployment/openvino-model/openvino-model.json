@@ -361,14 +361,7 @@
                         }
                     ]
                 },
-                "traffic": 100,
-                "explainer": {
-                    "type": "AnchorTabular",
-                    "containerSpec": {
-                        "name": "",
-                        "resources": {}
-                    }
-                }
+                "traffic": 100
             }
         ]
     },
