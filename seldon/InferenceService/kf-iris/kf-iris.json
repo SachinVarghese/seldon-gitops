@@ -4,10 +4,7 @@
     "metadata": {
         "name": "kf-iris",
         "namespace": "seldon",
-        "creationTimestamp": null,
-        "labels": {
-            "fluentd": "true"
-        }
+        "creationTimestamp": null
     },
     "spec": {
         "default": {
@@ -30,19 +27,7 @@
                     "mode": "all"
                 }
             }
-        },
-        "canary": {
-            "predictor": {
-                "sklearn": {
-                    "storageUri": "gs://seldon-models/sklearn/iris",
-                    "resources": {}
-                },
-                "logger": {
-                    "mode": "all"
-                }
-            }
-        },
-        "canaryTrafficPercent": 10
+        }
     },
     "status": {}
 }
