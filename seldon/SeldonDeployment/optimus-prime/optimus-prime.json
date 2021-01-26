@@ -1,0 +1,75 @@
+{
+    "kind": "SeldonDeployment",
+    "apiVersion": "machinelearning.seldon.io/v1alpha2",
+    "metadata": {
+        "name": "optimus-prime",
+        "namespace": "seldon",
+        "creationTimestamp": null,
+        "labels": {
+            "fluentd": "true"
+        }
+    },
+    "spec": {
+        "name": "optimus-prime",
+        "predictors": [
+            {
+                "name": "default",
+                "graph": {
+                    "name": "output-transformer",
+                    "children": [
+                        {
+                            "name": "input-transformer",
+                            "children": [
+                                {
+                                    "name": "optimus-prime-container",
+                                    "type": "MODEL",
+                                    "logger": {
+                                        "url": "http://broker-ingress.knative-eventing.svc.cluster.local/seldon-logs/default",
+                                        "mode": "all"
+                                    }
+                                }
+                            ],
+                            "type": "TRANSFORMER"
+                        }
+                    ],
+                    "type": "OUTPUT_TRANSFORMER"
+                },
+                "componentSpecs": [
+                    {
+                        "metadata": {
+                            "creationTimestamp": "2021-01-26T14:21:11Z"
+                        },
+                        "spec": {
+                            "containers": [
+                                {
+                                    "name": "optimus-prime-container",
+                                    "image": "seldonio/metadata-generic-node:0.4",
+                                    "resources": {}
+                                },
+                                {
+                                    "name": "input-transformer",
+                                    "image": "seldonio/metadata-generic-node:0.4",
+                                    "resources": {}
+                                },
+                                {
+                                    "name": "output-transformer",
+                                    "image": "seldonio/metadata-generic-node:0.4",
+                                    "resources": {}
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "replicas": 1,
+                "engineResources": {},
+                "svcOrchSpec": {},
+                "traffic": 100
+            }
+        ],
+        "annotations": {
+            "seldon.io/engine-seldon-log-messages-externally": "true"
+        },
+        "protocol": "seldon"
+    },
+    "status": {}
+}
