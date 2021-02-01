@@ -118,39 +118,6 @@
                 },
                 "svcOrchSpec": {},
                 "traffic": 10
-            },
-            {
-                "name": "shadow",
-                "graph": {
-                    "name": "iris-classifier-container",
-                    "implementation": "TENSORFLOW_SERVER",
-                    "modelUri": "gs://seldon-models/sklearn/iis",
-                    "logger": {
-                        "mode": "all"
-                    }
-                },
-                "componentSpecs": [
-                    {
-                        "metadata": {
-                            "creationTimestamp": "2021-02-01T16:13:43Z"
-                        },
-                        "spec": {
-                            "containers": [
-                                {
-                                    "name": "iris-classifier-container",
-                                    "resources": {}
-                                }
-                            ]
-                        }
-                    }
-                ],
-                "replicas": 1,
-                "annotations": {
-                    "seldon.io/canary": "false"
-                },
-                "engineResources": {},
-                "svcOrchSpec": {},
-                "shadow": true
             }
         ],
         "annotations": {
