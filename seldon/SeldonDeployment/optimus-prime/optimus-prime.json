@@ -40,7 +40,7 @@
                             "creationTimestamp": "2021-01-26T14:21:11Z"
                         },
                         "spec": {
-                            "containers": [
+                            "contains": [
                                 {
                                     "name": "optimus-prime-container",
                                     "image": "seldonio/metadata-generic-node:0.4",
