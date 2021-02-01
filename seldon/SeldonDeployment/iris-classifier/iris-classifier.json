@@ -62,7 +62,7 @@
                     "version": "default"
                 },
                 "svcOrchSpec": {},
-                "traffic": 100
+                "traffic": 90
             },
             {
                 "name": "shadow",
@@ -96,6 +96,39 @@
                 "engineResources": {},
                 "svcOrchSpec": {},
                 "shadow": true
+            },
+            {
+                "name": "canary",
+                "graph": {
+                    "name": "iris-classifier-container",
+                    "implementation": "XGBOOST_SERVER",
+                    "modelUri": "gs://seldon-models/xgboost/iris",
+                    "logger": {
+                        "mode": "all"
+                    }
+                },
+                "componentSpecs": [
+                    {
+                        "metadata": {
+                            "creationTimestamp": "2021-02-01T15:31:07Z"
+                        },
+                        "spec": {
+                            "containers": [
+                                {
+                                    "name": "iris-classifier-container",
+                                    "resources": {}
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "replicas": 1,
+                "annotations": {
+                    "seldon.io/canary": "true"
+                },
+                "engineResources": {},
+                "svcOrchSpec": {},
+                "traffic": 10
             }
         ],
         "annotations": {
