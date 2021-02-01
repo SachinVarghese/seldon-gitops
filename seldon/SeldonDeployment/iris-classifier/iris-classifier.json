@@ -124,7 +124,7 @@
                 "graph": {
                     "name": "iris-classifier-container",
                     "implementation": "TENSORFLOW_SERVER",
-                    "modelUri": "gs://seldon-models/sklearn/iris",
+                    "modelUri": "gs://seldon-models/sklearn/iis",
                     "logger": {
                         "mode": "all"
                     }
