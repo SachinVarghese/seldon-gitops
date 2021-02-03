@@ -28,7 +28,7 @@
                                     "--model_name",
                                     "cifar10od",
                                     "--http_port",
-                                    "8080",
+                                    "8081",
                                     "--protocol",
                                     "tensorflow.http",
                                     "--storage_uri",
