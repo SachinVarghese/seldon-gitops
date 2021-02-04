@@ -4,7 +4,10 @@
     "metadata": {
         "name": "kf-iris",
         "namespace": "seldon",
-        "creationTimestamp": null
+        "creationTimestamp": null,
+        "labels": {
+            "fluentd": "true"
+        }
     },
     "spec": {
         "default": {
@@ -27,7 +30,19 @@
                     "mode": "all"
                 }
             }
-        }
+        },
+        "canary": {
+            "predictor": {
+                "xgboost": {
+                    "storageUri": "gs://kfserving-samples/models/xgboost/iris",
+                    "resources": {}
+                },
+                "logger": {
+                    "mode": "all"
+                }
+            }
+        },
+        "canaryTrafficPercent": 10
     },
     "status": {}
 }
