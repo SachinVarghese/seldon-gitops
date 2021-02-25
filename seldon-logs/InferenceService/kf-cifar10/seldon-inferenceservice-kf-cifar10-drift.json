@@ -48,7 +48,7 @@
                                     "org.kubeflow.serving.seldon-inferenceservice-kf-cifar10-drift",
                                     "DriftDetector",
                                     "--drift_batch_size",
-                                    "1"
+                                    "10002"
                                 ],
                                 "ports": [
                                     {
