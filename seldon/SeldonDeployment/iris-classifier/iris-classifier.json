@@ -151,6 +151,39 @@
                 "engineResources": {},
                 "svcOrchSpec": {},
                 "shadow": true
+            },
+            {
+                "name": "shadow2",
+                "graph": {
+                    "name": "iris-classifier-container",
+                    "implementation": "SKLEARN_SERVER",
+                    "modelUri": "gs://seldon-models/sklearn/iris",
+                    "logger": {
+                        "mode": "all"
+                    }
+                },
+                "componentSpecs": [
+                    {
+                        "metadata": {
+                            "creationTimestamp": "2021-02-25T10:41:56Z"
+                        },
+                        "spec": {
+                            "containers": [
+                                {
+                                    "name": "iris-classifier-container",
+                                    "resources": {}
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "replicas": 1,
+                "annotations": {
+                    "seldon.io/canary": "false"
+                },
+                "engineResources": {},
+                "svcOrchSpec": {},
+                "shadow": true
             }
         ],
         "annotations": {
