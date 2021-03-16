@@ -43,13 +43,6 @@
                                     "--drift_batch_size",
                                     "1000"
                                 ],
-                                "envFrom": [
-                                    {
-                                        "secretRef": {
-                                            "name": "elastic-credentials"
-                                        }
-                                    }
-                                ],
                                 "resources": {},
                                 "securityContext": {
                                     "runAsUser": 8888
