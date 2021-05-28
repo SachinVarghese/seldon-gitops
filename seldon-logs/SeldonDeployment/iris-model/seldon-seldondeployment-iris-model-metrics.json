@@ -1,0 +1,29 @@
+{
+    "kind": "List",
+    "apiVersion": "v1",
+    "metadata": {},
+    "items": [
+        {
+            "kind": "Trigger",
+            "apiVersion": "eventing.knative.dev/v1",
+            "metadata": {
+                "name": "seldon-seldondeployment-iris-model-metrics-trigger",
+                "namespace": "seldon-logs",
+                "creationTimestamp": null
+            },
+            "spec": {
+                "broker": "default",
+                "filter": {
+                    "attributes": {
+                        "inferenceservicename": "iris-model",
+                        "type": "io.seldon.serving.feedback"
+                    }
+                },
+                "subscriber": {
+                    "uri": "http://seldon-seldondeployment-iris-model-metrics.seldon.svc.cluster.local"
+                }
+            },
+            "status": {}
+        }
+    ]
+}
