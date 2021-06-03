@@ -10,7 +10,7 @@
         }
     },
     "spec": {
-        "name": "tfcifar10",
+        "name": "cifar10",
         "predictors": [
             {
                 "name": "default",
