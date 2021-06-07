@@ -16,14 +16,14 @@
                     "metadata": {
                         "creationTimestamp": null,
                         "labels": {
-                            "fluentd": "true"
+                            "fluentd": "true",
+                            "seldon-deployment-id": "cifar10-image"
                         }
                     },
                     "spec": {
                         "containers": [
                             {
                                 "name": "outlier-detector",
-                                "image": "seldonio/alibi-detect-server:1.6.0-PR2923",
                                 "args": [
                                     "--model_name",
                                     "cifar10",
