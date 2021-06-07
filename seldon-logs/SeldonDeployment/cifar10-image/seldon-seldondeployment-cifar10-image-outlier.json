@@ -7,7 +7,7 @@
             "kind": "Trigger",
             "apiVersion": "eventing.knative.dev/v1",
             "metadata": {
-                "name": "seldon-seldondeployment-cifar10-image-classifier-outlier-trigger",
+                "name": "seldon-seldondeployment-cifar10-image-outlier-trigger",
                 "namespace": "seldon-logs",
                 "creationTimestamp": null
             },
@@ -15,12 +15,12 @@
                 "broker": "default",
                 "filter": {
                     "attributes": {
-                        "inferenceservicename": "cifar10-image-classifier",
+                        "inferenceservicename": "cifar10-image",
                         "type": "io.seldon.serving.inference.request"
                     }
                 },
                 "subscriber": {
-                    "uri": "http://seldon-seldondeployment-cifar10-image-classifier-outlier.seldon.svc.cluster.local"
+                    "uri": "http://seldon-seldondeployment-cifar10-image-outlier.seldon.svc.cluster.local"
                 }
             },
             "status": {}
