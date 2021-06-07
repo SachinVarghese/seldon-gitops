@@ -17,7 +17,8 @@
                         "creationTimestamp": null,
                         "labels": {
                             "fluentd": "true",
-                            "seldon-deployment-id": "cifar10-image"
+                            "seldon-deployment-id": "cifar10-image",
+                            "seldon.io/outlier": "true"
                         }
                     },
                     "spec": {
