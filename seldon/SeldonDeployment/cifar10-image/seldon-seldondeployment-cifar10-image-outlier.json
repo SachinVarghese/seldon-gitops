@@ -16,7 +16,8 @@
                     "metadata": {
                         "creationTimestamp": null,
                         "labels": {
-                            "fluentd": "true"
+                            "fluentd": "true",
+                            "seldon-deployment-id": "cifar10-image"
                         }
                     },
                     "spec": {
