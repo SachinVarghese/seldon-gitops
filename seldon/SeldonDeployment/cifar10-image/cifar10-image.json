@@ -2,7 +2,7 @@
     "kind": "SeldonDeployment",
     "apiVersion": "machinelearning.seldon.io/v1",
     "metadata": {
-        "name": "cifar10-image-classifier",
+        "name": "cifar10-image",
         "namespace": "seldon",
         "creationTimestamp": null,
         "labels": {
@@ -11,12 +11,12 @@
         }
     },
     "spec": {
-        "name": "cifar10-image-classifier",
+        "name": "cifar10-image",
         "predictors": [
             {
                 "name": "default",
                 "graph": {
-                    "name": "cifar10-image-classifier-container",
+                    "name": "cifar10-image-container",
                     "implementation": "TENSORFLOW_SERVER",
                     "modelUri": "gs://seldon-models/tfserving/cifar10/resnet32",
                     "logger": {
@@ -31,7 +31,7 @@
                         "spec": {
                             "containers": [
                                 {
-                                    "name": "cifar10-image-classifier-container",
+                                    "name": "cifar10-image-container",
                                     "resources": {}
                                 }
                             ]
