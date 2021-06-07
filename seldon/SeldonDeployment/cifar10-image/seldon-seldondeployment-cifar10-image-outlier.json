@@ -7,7 +7,7 @@
             "kind": "Service",
             "apiVersion": "serving.knative.dev/v1",
             "metadata": {
-                "name": "seldon-seldondeployment-cifar10-image-classifier-outlier",
+                "name": "seldon-seldondeployment-cifar10-image-outlier",
                 "namespace": "seldon",
                 "creationTimestamp": null
             },
@@ -37,7 +37,7 @@
                                     "--event_type",
                                     "io.seldon.serving.inference.outlier",
                                     "--event_source",
-                                    "io.seldon.serving.seldon-seldondeployment-cifar10-image-classifier-outlier",
+                                    "io.seldon.serving.seldon-seldondeployment-cifar10-image-outlier",
                                     "OutlierDetector",
                                     "--drift_batch_size",
                                     "1000"
