@@ -35,13 +35,22 @@
                         "spec": {
                             "containers": [
                                 {
-                                    "name": "af-model",
-                                    "image": "seldonio/metadata-generic-node:0.4",
-                                    "resources": {}
-                                },
-                                {
                                     "name": "model-translator-testing",
                                     "image": "seldonio/mock_classifier:1.5.0",
+                                    "resources": {}
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "metadata": {
+                            "creationTimestamp": "2021-06-25T14:56:21Z"
+                        },
+                        "spec": {
+                            "containers": [
+                                {
+                                    "name": "af-model",
+                                    "image": "seldonio/metadata-generic-node:0.4",
                                     "resources": {}
                                 }
                             ]
