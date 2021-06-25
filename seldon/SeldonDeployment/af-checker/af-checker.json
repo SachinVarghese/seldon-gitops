@@ -50,8 +50,17 @@
                             "containers": [
                                 {
                                     "name": "af-model",
-                                    "image": "seldonio/metadata-generic-node:0.4",
-                                    "resources": {}
+                                    "resources":{
+                                        "requests":{
+                                            "cpu":"0.8"
+                                            "memory":"1Gi"
+                                        }
+                                        "limits":{
+                                            "cpu":"1"
+                                            "memory":"2Gi"
+                                        }
+                                    }
+                                    "image": "seldonio/metadata-generic-node:0.4"
                                 }
                             ]
                         }
