@@ -15,7 +15,7 @@
             {
                 "name": "default",
                 "graph": {
-                    "name": "model-translator",
+                    "name": "model-translator-testing",
                     "children": [
                         {
                             "name": "af-model",
@@ -40,7 +40,7 @@
                                     "resources": {}
                                 },
                                 {
-                                    "name": "model-translator",
+                                    "name": "model-translator-testing",
                                     "image": "seldonio/mock_classifier:1.5.0",
                                     "resources": {}
                                 }
@@ -51,7 +51,7 @@
                 "replicas": 1,
                 "annotations": {
                     "project/af-model": "default",
-                    "project/model-translator": "default"
+                    "project/model-translator-testing": "default"
                 },
                 "engineResources": {},
                 "svcOrchSpec": {},
