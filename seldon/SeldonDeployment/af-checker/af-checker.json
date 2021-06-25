@@ -15,10 +15,10 @@
             {
                 "name": "default",
                 "graph": {
-                    "name": "output-transformer",
+                    "name": "model-translator",
                     "children": [
                         {
-                            "name": "af-checker-container",
+                            "name": "af-model",
                             "type": "MODEL",
                             "logger": {
                                 "mode": "all"
@@ -35,12 +35,12 @@
                         "spec": {
                             "containers": [
                                 {
-                                    "name": "af-checker-container",
+                                    "name": "af-model",
                                     "image": "seldonio/metadata-generic-node:0.4",
                                     "resources": {}
                                 },
                                 {
-                                    "name": "output-transformer",
+                                    "name": "model-translator",
                                     "image": "seldonio/mock_classifier:1.5.0",
                                     "resources": {}
                                 }
@@ -50,8 +50,8 @@
                 ],
                 "replicas": 1,
                 "annotations": {
-                    "project/af-checker-container": "default",
-                    "project/output-transformer": "default"
+                    "project/af-model": "default",
+                    "project/model-translator": "default"
                 },
                 "engineResources": {},
                 "svcOrchSpec": {},
