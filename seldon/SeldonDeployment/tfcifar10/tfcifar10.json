@@ -18,7 +18,7 @@
                 "graph": {
                     "name": "cifar10",
                     "implementation": "TRITON_SERVER",
-                    "modelUri": "gs://seldon-models/triton/pytorch_cifar10",
+                    "modelUri": "gs://seldon-models/triton/tf_cifar10",
                     "logger": {
                         "mode": "all"
                     }
