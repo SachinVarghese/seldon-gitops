@@ -58,7 +58,7 @@
 				},
 				"engineResources": {},
 				"svcOrchSpec": {},
-				"traffic": 100
+				"traffic": 80
 			},
 			{
 				"name": "canary",
@@ -107,7 +107,7 @@
 				},
 				"engineResources": {},
 				"svcOrchSpec": {},
-				"traffic": 100
+				"traffic": 20
 			}
 		],
 		"annotations": {
