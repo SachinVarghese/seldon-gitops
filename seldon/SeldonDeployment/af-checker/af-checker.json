@@ -1,119 +1,76 @@
 {
-	"kind": "SeldonDeployment",
-	"apiVersion": "machinelearning.seldon.io/v1",
-	"metadata": {
-		"name": "af-checker",
-		"namespace": "seldon",
-		"creationTimestamp": null,
-		"labels": {
-			"fluentd": "true"
-		}
-	},
-	"spec": {
-		"name": "af-checker",
-		"predictors": [{
-				"name": "default",
-				"graph": {
-					"name": "model-translator",
-					"children": [{
-						"name": "af-model",
-						"type": "MODEL",
-						"logger": {
-							"mode": "all"
-						}
-					}],
-					"type": "OUTPUT_TRANSFORMER"
-				},
-				"componentSpecs": [{
-					"metadata": {
-						"creationTimestamp": "2021-06-25T14:56:21Z"
-					},
-					"spec": {
-						"containers": [{
-								"name": "af-model",
-								"image": "seldonio/metadata-generic-node:0.4",
-								"resources": {}
-							},
-							{
-								"name": "model-translator",
-								"image": "seldonio/mock_classifier:1.5.0",
-								"resources": {
-									"requests": {
-										"cpu": "0.8",
-										"memory": "1Gi"
-									},
-									"limits": {
-										"cpu": "1",
-										"memory": "2Gi"
-									}
-								}
-							}
-						]
-					}
-				}],
-				"replicas": 1,
-				"annotations": {
-					"project/af-model": "default",
-					"project/model-translator": "default"
-				},
-				"engineResources": {},
-				"svcOrchSpec": {},
-				"traffic": 80
-			},
-			{
-				"name": "canary",
-				"graph": {
-					"name": "model-translator",
-					"children": [{
-						"name": "af-model",
-						"type": "MODEL",
-						"logger": {
-							"mode": "all"
-						}
-					}],
-					"type": "OUTPUT_TRANSFORMER"
-				},
-				"componentSpecs": [{
-					"metadata": {
-						"creationTimestamp": "2021-06-25T14:56:21Z"
-					},
-					"spec": {
-						"containers": [{
-								"name": "af-model",
-								"image": "seldonio/metadata-generic-node:0.4",
-								"resources": {}
-							},
-							{
-								"name": "model-translator",
-								"image": "seldonio/mock_classifier:1.5.0",
-								"resources": {
-									"requests": {
-										"cpu": "0.8",
-										"memory": "1Gi"
-									},
-									"limits": {
-										"cpu": "1",
-										"memory": "2Gi"
-									}
-								}
-							}
-						]
-					}
-				}],
-				"replicas": 1,
-				"annotations": {
-					"project/af-model": "default",
-					"project/model-translator": "default"
-				},
-				"engineResources": {},
-				"svcOrchSpec": {},
-				"traffic": 20
-			}
-		],
-		"annotations": {
-			"seldon.io/engine-seldon-log-messages-externally": "true"
-		},
-		"protocol": "seldon"
-	},
-	"status": {}
+    "kind": "SeldonDeployment",
+    "apiVersion": "machinelearning.seldon.io/v1",
+    "metadata": {
+        "name": "af-checker",
+        "namespace": "seldon",
+        "creationTimestamp": null,
+        "labels": {
+            "fluentd": "true"
+        }
+    },
+    "spec": {
+        "name": "af-checker",
+        "predictors": [
+            {
+                "name": "default",
+                "graph": {
+                    "name": "model-translator",
+                    "children": [
+                        {
+                            "name": "af-model",
+                            "type": "MODEL",
+                            "logger": {
+                                "mode": "all"
+                            }
+                        }
+                    ],
+                    "type": "OUTPUT_TRANSFORMER"
+                },
+                "componentSpecs": [
+                    {
+                        "metadata": {
+                            "creationTimestamp": "2021-06-25T14:56:21Z"
+                        },
+                        "spec": {
+                            "containers": [
+                                {
+                                    "name": "af-model",
+                                    "image": "seldonio/metadata-generic-node:0.4",
+                                    "resources": {}
+                                },
+                                {
+                                    "name": "model-translator",
+                                    "image": "seldonio/mock_classifier:1.5.0",
+                                    "resources": {
+                                        "requests": {
+                                            "cpu": "0.8",
+                                            "memory": "1Gi"
+                                        },
+                                        "limits": {
+                                            "cpu": "1",
+                                            "memory": "2Gi"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "replicas": 1,
+                "annotations": {
+                    "project/af-model": "default",
+                    "project/model-translator": "default"
+                },
+                "engineResources": {},
+                "svcOrchSpec": {},
+                "traffic": 100
+            }
+        ],
+        "annotations": {
+            "seldon.io/engine-seldon-log-messages-externally": "true"
+        },
+        "protocol": "seldon"
+    },
+    "status": {}
 }
