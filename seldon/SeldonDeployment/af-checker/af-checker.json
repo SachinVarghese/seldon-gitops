@@ -61,7 +61,7 @@
 				"traffic": 100
 			},
 			{
-				"name": "default",
+				"name": "canary",
 				"graph": {
 					"name": "model-translator",
 					"children": [{
