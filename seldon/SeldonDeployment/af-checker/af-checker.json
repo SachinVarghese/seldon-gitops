@@ -15,6 +15,9 @@
             {
                 "name": "default",
                 "graph": {
+                    "name": "model-translator-post",
+                    "children": [
+                        {
                     "name": "model-translator",
                     "children": [
                         {
@@ -24,6 +27,9 @@
                                 "mode": "all"
                             }
                         }
+                    ],
+                    "type": "INPUT_TRANSFORMER"
+                }
                     ],
                     "type": "OUTPUT_TRANSFORMER"
                 },
@@ -38,6 +44,20 @@
                                     "name": "af-model",
                                     "image": "seldonio/metadata-generic-node:0.4",
                                     "resources": {}
+                                },
+                                {
+                                    "name": "model-translator-post",
+                                    "image": "seldonio/mock_classifier:1.5.0",
+                                    "resources": {
+                                        "requests": {
+                                            "cpu": "0.8",
+                                            "memory": "1Gi"
+                                        },
+                                        "limits": {
+                                            "cpu": "1",
+                                            "memory": "2Gi"
+                                        }
+                                    }
                                 },
                                 {
                                     "name": "model-translator",
@@ -60,7 +80,8 @@
                 "replicas": 1,
                 "annotations": {
                     "project/af-model": "default",
-                    "project/model-translator": "default"
+                    "project/model-translator": "default",
+                    "project/model-translator-post": "default"
                 },
                 "engineResources": {},
                 "svcOrchSpec": {},
