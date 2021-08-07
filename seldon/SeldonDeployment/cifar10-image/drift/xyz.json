@@ -43,7 +43,7 @@
                             "io.seldon.serving.seldon-seldondeployment-cifar10-image-outlier",
                             "DriftDetector",
                             "--drift_batch_size",
-                            "1000"
+                            "1001"
                         ],
                         "resources": {},
                         "securityContext": {
