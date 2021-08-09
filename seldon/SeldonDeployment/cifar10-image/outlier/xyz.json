@@ -38,6 +38,10 @@
                             "gs://seldon-models/alibi-detect/od/OutlierVAE/cifar10",
                             "--reply_url",
                             "http://seldon-request-logger.seldon-logs",
+                            "--event_type",
+                            "io.seldon.serving.inference.outlier",
+                            "--event_source",
+                            "io.seldon.serving.xyz",
                             "OutlierDetector"
                         ],
                         "resources": {}
