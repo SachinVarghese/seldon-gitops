@@ -1,0 +1,22 @@
+{
+    "kind": "Trigger",
+    "apiVersion": "eventing.knative.dev/v1",
+    "metadata": {
+        "name": "outlier-finder-trigger",
+        "namespace": "seldon-logs",
+        "creationTimestamp": null
+    },
+    "spec": {
+        "broker": "default",
+        "filter": {
+            "attributes": {
+                "inferenceservicename": "cifar10-image",
+                "type": "io.seldon.serving.inference.request"
+            }
+        },
+        "subscriber": {
+            "uri": "http://outlier-finder.seldon.svc.cluster.local"
+        }
+    },
+    "status": {}
+}
