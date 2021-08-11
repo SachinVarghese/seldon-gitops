@@ -6,6 +6,7 @@
         "namespace": "production",
         "creationTimestamp": null,
         "labels": {
+            "app.kubernetes.io/instance": "seldon-gitops-production",
             "fluentd": "true"
         }
     },
@@ -43,7 +44,15 @@
                 },
                 "engineResources": {},
                 "svcOrchSpec": {},
-                "traffic": 100
+                "traffic": 100,
+                "explainer": {
+                    "type": "AnchorTabular",
+                    "modelUri": "gs://seldon-models/sklearn/income/explainer-py36-0.5.2",
+                    "containerSpec": {
+                        "name": "",
+                        "resources": {}
+                    }
+                }
             }
         ],
         "annotations": {
