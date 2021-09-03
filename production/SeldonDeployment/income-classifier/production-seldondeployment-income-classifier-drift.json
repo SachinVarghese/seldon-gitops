@@ -33,7 +33,6 @@
                             {
                                 "name": "drift-detector",
                                 "image": "sachinmv31/alibi-detect-server:1.11.0-dev",
-                                "imagePullPolicy": "Always",
                                 "args": [
                                     "--model_name",
                                     "income-detector",
