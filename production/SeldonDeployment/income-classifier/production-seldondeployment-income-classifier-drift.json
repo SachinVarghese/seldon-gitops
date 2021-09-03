@@ -32,7 +32,7 @@
                         "containers": [
                             {
                                 "name": "drift-detector",
-                                "image": "seldonio/alibi-detect-server:1.9.1",
+                                "image": "seldonio/alibi-detect-server::1.11.0-dev",
                                 "args": [
                                     "--model_name",
                                     "income-detector",
@@ -41,7 +41,7 @@
                                     "--protocol",
                                     "seldon.http",
                                     "--storage_uri",
-                                    "s3://detect/detector_data_cat/",
+                                    "s3://detect/income-detect/",
                                     "--reply_url",
                                     "http://seldon-request-logger.seldon-logs",
                                     "--event_type",
