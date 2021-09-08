@@ -42,7 +42,9 @@
                             "io.seldon.serving.inference.outlier",
                             "--event_source",
                             "io.seldon.serving.xyz",
-                            "OutlierDetector"
+                            "OutlierDetector",
+                            "--drift_batch_size",
+                            "20"
                         ],
                         "envFrom": [
                             {
