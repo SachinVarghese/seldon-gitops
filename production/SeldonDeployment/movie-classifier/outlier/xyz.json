@@ -42,16 +42,7 @@
                             "io.seldon.serving.inference.outlier",
                             "--event_source",
                             "io.seldon.serving.xyz",
-                            "OutlierDetector",
-                            "--drift_batch_size",
-                            "20"
-                        ],
-                        "envFrom": [
-                            {
-                                "secretRef": {
-                                    "name": "alibi-secret"
-                                }
-                            }
+                            "OutlierDetector"
                         ],
                         "resources": {}
                     }
