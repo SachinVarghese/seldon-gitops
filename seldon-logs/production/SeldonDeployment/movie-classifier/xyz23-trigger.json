@@ -1,0 +1,22 @@
+{
+    "kind": "Trigger",
+    "apiVersion": "eventing.knative.dev/v1",
+    "metadata": {
+        "name": "xyz23-trigger",
+        "namespace": "seldon-logs",
+        "creationTimestamp": null
+    },
+    "spec": {
+        "broker": "default",
+        "filter": {
+            "attributes": {
+                "inferenceservicename": "movie-classifier",
+                "type": "io.seldon.serving.inference.request"
+            }
+        },
+        "subscriber": {
+            "uri": "http://xyz23.production.svc.cluster.local"
+        }
+    },
+    "status": {}
+}
