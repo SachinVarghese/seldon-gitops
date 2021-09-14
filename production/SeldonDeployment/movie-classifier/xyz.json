@@ -34,6 +34,8 @@
                             "8080",
                             "--protocol",
                             "tensorflow.http",
+                            "--storage_uri",
+                            "gs://seldon-models/alibi-detect/od/OutlierVAE/cifar10",
                             "--reply_url",
                             "http://seldon-request-logger.seldon-logs.svc.cluster.local:80",
                             "--event_type",
