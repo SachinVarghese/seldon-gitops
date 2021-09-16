@@ -1,0 +1,22 @@
+{
+    "kind": "Trigger",
+    "apiVersion": "eventing.knative.dev/v1",
+    "metadata": {
+        "name": "production-seldondeployment-income-classifier-drifts-trigger",
+        "namespace": "seldon-logs",
+        "creationTimestamp": null
+    },
+    "spec": {
+        "broker": "default",
+        "filter": {
+            "attributes": {
+                "inferenceservicename": "income-classifier",
+                "type": "io.seldon.serving.inference.request"
+            }
+        },
+        "subscriber": {
+            "uri": "http://production-seldondeployment-income-classifier-drifts.production.svc.cluster.local"
+        }
+    },
+    "status": {}
+}
