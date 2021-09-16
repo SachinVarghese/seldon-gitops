@@ -40,7 +40,7 @@
                             "--http_port",
                             "8080",
                             "--protocol",
-                            "tensorflow.http",
+                            "seldon.http",
                             "--storage_uri",
                             "s3://detect/income-detect/",
                             "--reply_url",
