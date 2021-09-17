@@ -1,0 +1,55 @@
+{
+    "kind": "SeldonDeployment",
+    "apiVersion": "machinelearning.seldon.io/v1",
+    "metadata": {
+        "name": "claus-test",
+        "namespace": "production",
+        "creationTimestamp": null,
+        "labels": {
+            "fluentd": "true"
+        }
+    },
+    "spec": {
+        "name": "claus-test",
+        "predictors": [
+            {
+                "name": "default",
+                "graph": {
+                    "name": "claus-test-container",
+                    "implementation": "TENSORFLOW_SERVER",
+                    "modelUri": "gs://seldon-models/tfserving/cifar10/resnet32",
+                    "logger": {
+                        "mode": "all"
+                    }
+                },
+                "componentSpecs": [
+                    {
+                        "metadata": {
+                            "creationTimestamp": "2021-09-17T07:13:14Z"
+                        },
+                        "spec": {
+                            "containers": [
+                                {
+                                    "name": "claus-test-container",
+                                    "resources": {}
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "replicas": 1,
+                "annotations": {
+                    "project.seldon.io/claus-test-container": "default"
+                },
+                "engineResources": {},
+                "svcOrchSpec": {},
+                "traffic": 100
+            }
+        ],
+        "annotations": {
+            "seldon.io/engine-seldon-log-messages-externally": "true"
+        },
+        "protocol": "tensorflow"
+    },
+    "status": {}
+}
