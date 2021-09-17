@@ -1,0 +1,22 @@
+{
+    "kind": "Trigger",
+    "apiVersion": "eventing.knative.dev/v1",
+    "metadata": {
+        "name": "production-seldondeployment-cifar10-drift-trigger",
+        "namespace": "seldon-logs",
+        "creationTimestamp": null
+    },
+    "spec": {
+        "broker": "default",
+        "filter": {
+            "attributes": {
+                "inferenceservicename": "cifar10",
+                "type": "io.seldon.serving.inference.request"
+            }
+        },
+        "subscriber": {
+            "uri": "http://production-seldondeployment-cifar10-drift.production.svc.cluster.local"
+        }
+    },
+    "status": {}
+}
