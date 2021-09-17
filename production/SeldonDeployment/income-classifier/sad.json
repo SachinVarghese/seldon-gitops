@@ -26,7 +26,7 @@
                 "containers": [
                     {
                         "name": "outlier-detector",
-                        "image": "seldonio/alibi-detect-server:1.11.0-dev",
+                        "image": "seldonio/alibi-detect-server:1.9.1",
                         "args": [
                             "--model_name",
                             "sad",
@@ -35,7 +35,7 @@
                             "--protocol",
                             "tensorflow.http",
                             "--storage_uri",
-                            "hjkhsadpiopoiplkj",
+                            "hjkhsadpiop",
                             "--reply_url",
                             "http://seldon-request-logger.seldon-logs",
                             "--event_type",
