@@ -35,7 +35,7 @@
                             "--protocol",
                             "tensorflow.http",
                             "--storage_uri",
-                            "hjkh",
+                            "hjkhsad",
                             "--reply_url",
                             "http://seldon-request-logger.seldon-logs",
                             "--event_type",
