@@ -62,7 +62,7 @@
                         "envFrom": [
                             {
                                 "secretRef": {
-                                    "name": "alibi-secrets"
+                                    "name": "alibi-secret"
                                 }
                             }
                         ],
