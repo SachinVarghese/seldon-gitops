@@ -34,6 +34,8 @@
                             "8080",
                             "--protocol",
                             "tensorflow.http",
+                            "--storage_uri",
+                            "try",
                             "--reply_url",
                             "http://seldon-request-logger.seldon-logs",
                             "--event_type",
