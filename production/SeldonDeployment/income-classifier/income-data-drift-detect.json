@@ -33,7 +33,7 @@
                 "containers": [
                     {
                         "name": "drift-detector",
-                        "image": "seldonio/alibi-detect-server:1.9.1",
+                        "image": "sachinmv31/alibi-detect-server:1.11.0-dev",
                         "args": [
                             "--model_name",
                             "income-detector",
