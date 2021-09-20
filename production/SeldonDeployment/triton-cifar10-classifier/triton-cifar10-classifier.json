@@ -16,7 +16,7 @@
             {
                 "name": "default",
                 "graph": {
-                    "name": "triton-cifar10-classifier-container",
+                    "name": "cifar10",
                     "implementation": "TRITON_SERVER",
                     "modelUri": "gs://seldon-models/triton/tf_cifar10",
                     "logger": {
@@ -31,7 +31,7 @@
                         "spec": {
                             "containers": [
                                 {
-                                    "name": "triton-cifar10-classifier-container",
+                                    "name": "cifar10",
                                     "resources": {}
                                 }
                             ]
@@ -40,7 +40,7 @@
                 ],
                 "replicas": 1,
                 "annotations": {
-                    "project.seldon.io/triton-cifar10-classifier-container": "default"
+                    "project.seldon.io/cifar10": "default"
                 },
                 "engineResources": {},
                 "svcOrchSpec": {},
