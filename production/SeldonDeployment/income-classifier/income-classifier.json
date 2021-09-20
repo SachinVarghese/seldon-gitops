@@ -47,7 +47,7 @@
                 "traffic": 100,
                 "explainer": {
                     "type": "AnchorTabular",
-                    "modelUri": "gs://seldon-models/sklearn/income/explainer-py36-0.5.2",
+                    "modelUri": "gs://seldon-models/sklearn/income/explainer-py37-0.6.0",
                     "containerSpec": {
                         "name": "",
                         "resources": {}
