@@ -6,6 +6,7 @@
         "namespace": "seldon",
         "creationTimestamp": null,
         "labels": {
+            "app.kubernetes.io/instance": "seldon-gitops-seldon",
             "fluentd": "true"
         }
     },
@@ -46,41 +47,7 @@
                     "version": "default"
                 },
                 "svcOrchSpec": {},
-                "traffic": 60
-            },
-            {
-                "name": "canary",
-                "graph": {
-                    "name": "iris-classifier-container",
-                    "implementation": "SKLEARN_SERVER",
-                    "modelUri": "gs://seldon-models/sklearn/iris",
-                    "logger": {
-                        "mode": "all"
-                    }
-                },
-                "componentSpecs": [
-                    {
-                        "metadata": {
-                            "creationTimestamp": "2021-08-11T14:32:21Z"
-                        },
-                        "spec": {
-                            "containers": [
-                                {
-                                    "name": "iris-classifier-container",
-                                    "resources": {}
-                                }
-                            ]
-                        }
-                    }
-                ],
-                "replicas": 1,
-                "annotations": {
-                    "project.seldon.io/iris-classifier-container": "default",
-                    "seldon.io/canary": "true"
-                },
-                "engineResources": {},
-                "svcOrchSpec": {},
-                "traffic": 40
+                "traffic": 100
             }
         ],
         "annotations": {
