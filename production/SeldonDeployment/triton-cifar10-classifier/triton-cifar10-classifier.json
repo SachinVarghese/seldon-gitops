@@ -1,0 +1,55 @@
+{
+    "kind": "SeldonDeployment",
+    "apiVersion": "machinelearning.seldon.io/v1",
+    "metadata": {
+        "name": "triton-cifar10-classifier",
+        "namespace": "production",
+        "creationTimestamp": null,
+        "labels": {
+            "fluentd": "true"
+        }
+    },
+    "spec": {
+        "name": "triton-cifar10-classifier",
+        "predictors": [
+            {
+                "name": "default",
+                "graph": {
+                    "name": "triton-cifar10-classifier-container",
+                    "implementation": "TRITON_SERVER",
+                    "modelUri": "gs://seldon-models/triton/tf_cifar10",
+                    "logger": {
+                        "mode": "all"
+                    }
+                },
+                "componentSpecs": [
+                    {
+                        "metadata": {
+                            "creationTimestamp": "2021-09-20T17:48:08Z"
+                        },
+                        "spec": {
+                            "containers": [
+                                {
+                                    "name": "triton-cifar10-classifier-container",
+                                    "resources": {}
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "replicas": 1,
+                "annotations": {
+                    "project.seldon.io/triton-cifar10-classifier-container": "default"
+                },
+                "engineResources": {},
+                "svcOrchSpec": {},
+                "traffic": 100
+            }
+        ],
+        "annotations": {
+            "seldon.io/engine-seldon-log-messages-externally": "true"
+        },
+        "protocol": "kfserving"
+    },
+    "status": {}
+}
