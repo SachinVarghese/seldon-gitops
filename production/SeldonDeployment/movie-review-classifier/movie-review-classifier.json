@@ -6,6 +6,7 @@
         "namespace": "production",
         "creationTimestamp": null,
         "labels": {
+            "app.kubernetes.io/instance": "seldon-gitops-production",
             "fluentd": "true"
         }
     },
@@ -43,7 +44,21 @@
                 },
                 "engineResources": {},
                 "svcOrchSpec": {},
-                "traffic": 100
+                "traffic": 100,
+                "explainer": {
+                    "type": "AnchorTabular",
+                    "containerSpec": {
+                        "name": "",
+                        "resources": {}
+                    },
+                    "config": {
+                        "batch_size": "100",
+                        "delta": "0.1",
+                        "max_anchor_size": "3",
+                        "tau": "0.15",
+                        "threshold": "0.95"
+                    }
+                }
             }
         ],
         "annotations": {
