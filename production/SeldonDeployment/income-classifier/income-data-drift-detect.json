@@ -51,7 +51,7 @@
                             "io.seldon.serving.income-data-drift-detect",
                             "DriftDetector",
                             "--drift_batch_size",
-                            "2"
+                            "1000"
                         ],
                         "ports": [
                             {
