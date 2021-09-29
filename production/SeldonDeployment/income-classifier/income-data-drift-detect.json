@@ -42,7 +42,7 @@
                             "--protocol",
                             "seldon.http",
                             "--storage_uri",
-                            "s3://detect/income-data-drift-detector/",
+                            "s3://detect/income-data-drift/",
                             "--reply_url",
                             "http://seldon-request-logger.seldon-logs",
                             "--event_type",
