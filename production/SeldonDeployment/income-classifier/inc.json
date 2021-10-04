@@ -59,6 +59,13 @@
                                 "protocol": "TCP"
                             }
                         ],
+                        "envFrom": [
+                            {
+                                "secretRef": {
+                                    "name": "alibi-secret"
+                                }
+                            }
+                        ],
                         "env": [
                             {
                                 "name": "SELDON_DEPLOYMENT_ID",
