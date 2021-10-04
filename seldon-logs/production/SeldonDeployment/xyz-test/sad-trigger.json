@@ -1,0 +1,22 @@
+{
+    "kind": "Trigger",
+    "apiVersion": "eventing.knative.dev/v1",
+    "metadata": {
+        "name": "sad-trigger",
+        "namespace": "seldon-logs",
+        "creationTimestamp": null
+    },
+    "spec": {
+        "broker": "default",
+        "filter": {
+            "attributes": {
+                "inferenceservicename": "xyz-test",
+                "type": "io.seldon.serving.inference.request"
+            }
+        },
+        "subscriber": {
+            "uri": "http://sad.production.svc.cluster.local"
+        }
+    },
+    "status": {}
+}
