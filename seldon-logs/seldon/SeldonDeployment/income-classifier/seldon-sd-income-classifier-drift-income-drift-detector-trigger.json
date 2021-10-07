@@ -1,0 +1,29 @@
+{
+    "kind": "Trigger",
+    "apiVersion": "eventing.knative.dev/v1",
+    "metadata": {
+        "name": "seldon-sd-income-classifier-drift-income-drift-detector-trigger",
+        "namespace": "seldon-logs",
+        "creationTimestamp": null,
+        "labels": {
+            "seldon.io/deployment-kind": "SeldonDeployment",
+            "seldon.io/deployment-name": "income-classifier",
+            "seldon.io/deployment-namespace": "seldon",
+            "seldon.io/detector-name": "income-drift-detector",
+            "seldon.io/detector-type": "drift"
+        }
+    },
+    "spec": {
+        "broker": "default",
+        "filter": {
+            "attributes": {
+                "inferenceservicename": "income-classifier",
+                "type": "io.seldon.serving.inference.request"
+            }
+        },
+        "subscriber": {
+            "uri": "http://income-drift-detector.seldon.svc.cluster.local"
+        }
+    },
+    "status": {}
+}
