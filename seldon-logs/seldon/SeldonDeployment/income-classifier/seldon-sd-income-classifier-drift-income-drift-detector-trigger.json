@@ -22,7 +22,7 @@
             }
         },
         "subscriber": {
-            "uri": "http://income-drift-detector.seldon.svc.cluster.local"
+            "uri": "http://seldon-sd-income-classifier-drift-income-drift-detector.seldon.svc.cluster.local"
         }
     },
     "status": {}
