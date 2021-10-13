@@ -49,7 +49,7 @@
                             "--event_type",
                             "io.seldon.serving.inference.drift",
                             "--event_source",
-                            "io.seldon.serving.income-drift-detector",
+                            "io.seldon.serving.income-classifier-income-drift-detector",
                             "DriftDetector",
                             "--drift_batch_size",
                             "1"
