@@ -18,6 +18,7 @@
         "filter": {
             "attributes": {
                 "inferenceservicename": "iris-classifier",
+                "namespace": "seldon",
                 "type": "io.seldon.serving.feedback"
             }
         },
