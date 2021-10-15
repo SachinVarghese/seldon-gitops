@@ -34,7 +34,7 @@
                 "containers": [
                     {
                         "name": "drift-detector",
-                        "image": "seldonio/alibi-detect-server:1.11.1",
+                        "image": "seldonio/alibi-detect-server:1.11.2",
                         "args": [
                             "--model_name",
                             "income-drift-detector",
