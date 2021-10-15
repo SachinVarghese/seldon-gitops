@@ -1,0 +1,29 @@
+{
+    "kind": "Trigger",
+    "apiVersion": "eventing.knative.dev/v1",
+    "metadata": {
+        "name": "seldon-sd-iris-classifier-metrics-mc-server-trigger",
+        "namespace": "seldon-logs",
+        "creationTimestamp": null,
+        "labels": {
+            "seldon.io/deployment-kind": "SeldonDeployment",
+            "seldon.io/deployment-name": "iris-classifier",
+            "seldon.io/deployment-namespace": "seldon",
+            "seldon.io/detector-name": "mc-server",
+            "seldon.io/detector-type": "metrics"
+        }
+    },
+    "spec": {
+        "broker": "default",
+        "filter": {
+            "attributes": {
+                "inferenceservicename": "iris-classifier",
+                "type": "io.seldon.serving.feedback"
+            }
+        },
+        "subscriber": {
+            "uri": "http://seldon-sd-iris-classifier-metrics-mc-server.seldon.svc.cluster.local"
+        }
+    },
+    "status": {}
+}
