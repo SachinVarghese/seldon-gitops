@@ -1,0 +1,55 @@
+{
+    "kind": "SeldonDeployment",
+    "apiVersion": "machinelearning.seldon.io/v1",
+    "metadata": {
+        "name": "tf-cifar-test",
+        "namespace": "production",
+        "creationTimestamp": null,
+        "labels": {
+            "fluentd": "true"
+        }
+    },
+    "spec": {
+        "name": "tf-cifar-test",
+        "predictors": [
+            {
+                "name": "default",
+                "graph": {
+                    "name": "tf-cifar-test-container",
+                    "implementation": "TRITON_SERVER",
+                    "modelUri": "gs://seldon-models/triton/tf_cifar10",
+                    "logger": {
+                        "mode": "all"
+                    }
+                },
+                "componentSpecs": [
+                    {
+                        "metadata": {
+                            "creationTimestamp": "2021-10-18T09:48:41Z"
+                        },
+                        "spec": {
+                            "containers": [
+                                {
+                                    "name": "tf-cifar-test-container",
+                                    "resources": {}
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "replicas": 1,
+                "annotations": {
+                    "project.seldon.io/tf-cifar-test-container": "default"
+                },
+                "engineResources": {},
+                "svcOrchSpec": {},
+                "traffic": 100
+            }
+        ],
+        "annotations": {
+            "seldon.io/engine-seldon-log-messages-externally": "true"
+        },
+        "protocol": "seldon"
+    },
+    "status": {}
+}
