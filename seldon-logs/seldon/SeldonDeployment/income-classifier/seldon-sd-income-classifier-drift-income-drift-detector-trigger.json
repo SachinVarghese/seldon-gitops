@@ -18,6 +18,7 @@
         "filter": {
             "attributes": {
                 "inferenceservicename": "income-classifier",
+                "namespace": "seldon",
                 "type": "io.seldon.serving.inference.request"
             }
         },
