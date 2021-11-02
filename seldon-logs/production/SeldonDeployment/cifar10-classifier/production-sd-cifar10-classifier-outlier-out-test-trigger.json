@@ -1,0 +1,30 @@
+{
+    "kind": "Trigger",
+    "apiVersion": "eventing.knative.dev/v1",
+    "metadata": {
+        "name": "production-sd-cifar10-classifier-outlier-out-test-trigger",
+        "namespace": "seldon-logs",
+        "creationTimestamp": null,
+        "labels": {
+            "seldon.io/deployment-kind": "SeldonDeployment",
+            "seldon.io/deployment-name": "cifar10-classifier",
+            "seldon.io/deployment-namespace": "production",
+            "seldon.io/detector-name": "out-test",
+            "seldon.io/detector-type": "outlier"
+        }
+    },
+    "spec": {
+        "broker": "default",
+        "filter": {
+            "attributes": {
+                "inferenceservicename": "cifar10-classifier",
+                "namespace": "production",
+                "type": "io.seldon.serving.inference.request"
+            }
+        },
+        "subscriber": {
+            "uri": "http://production-sd-cifar10-classifier-outlier-out-test.production.svc.cluster.local"
+        }
+    },
+    "status": {}
+}
