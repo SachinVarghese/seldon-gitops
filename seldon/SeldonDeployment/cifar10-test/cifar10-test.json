@@ -6,6 +6,7 @@
         "namespace": "seldon",
         "creationTimestamp": null,
         "labels": {
+            "app.kubernetes.io/instance": "seldon-gitops-seldon",
             "fluentd": "true"
         }
     },
@@ -14,39 +15,6 @@
         "predictors": [
             {
                 "name": "default",
-                "graph": {
-                    "name": "cifar10",
-                    "implementation": "TENSORFLOW_SERVER",
-                    "modelUri": "gs://seldon-models/triton/tf_cifar10",
-                    "logger": {
-                        "mode": "all"
-                    }
-                },
-                "componentSpecs": [
-                    {
-                        "metadata": {
-                            "creationTimestamp": "2021-11-20T15:20:39Z"
-                        },
-                        "spec": {
-                            "containers": [
-                                {
-                                    "name": "cifar10",
-                                    "resources": {}
-                                }
-                            ]
-                        }
-                    }
-                ],
-                "replicas": 1,
-                "annotations": {
-                    "project.seldon.io/cifar10": "default"
-                },
-                "engineResources": {},
-                "svcOrchSpec": {},
-                "traffic": 90
-            },
-            {
-                "name": "canary",
                 "graph": {
                     "name": "cifar10",
                     "implementation": "TRITON_SERVER",
@@ -72,12 +40,14 @@
                 ],
                 "replicas": 1,
                 "annotations": {
-                    "project.seldon.io/cifar10": "default",
-                    "seldon.io/canary": "true"
+                    "project.seldon.io/cifar10": "default"
                 },
                 "engineResources": {},
+                "labels": {
+                    "version": "default"
+                },
                 "svcOrchSpec": {},
-                "traffic": 10
+                "traffic": 100
             }
         ],
         "annotations": {
