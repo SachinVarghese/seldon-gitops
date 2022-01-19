@@ -41,12 +41,12 @@
 				"spec": {
 					"containers": [{
 							"name": "af-model",
-							"image": "seldonio/metadata-generic-node:0.4",
+							"image": "michaelseldon/mock-model:latest",
 							"resources": {}
 						},
 						{
 							"name": "model-translator-post",
-							"image": "seldonio/metadata-generic-node:0.4",
+							"image": "michaelseldon/mock-model:latest",
 							"resources": {
 								"requests": {
 									"cpu": "0.8",
@@ -60,7 +60,7 @@
 						},
 						{
 							"name": "model-translator",
-							"image": "seldonio/metadata-generic-node:0.4",
+							"image": "michaelseldon/mock-model:latest",
 							"resources": {
 								"requests": {
 									"cpu": "0.8",
