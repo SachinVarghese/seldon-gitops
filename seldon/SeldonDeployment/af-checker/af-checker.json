@@ -46,7 +46,7 @@
 						},
 						{
 							"name": "model-translator-post",
-							"image": "seldonio/mock_classifier:1.5.0",
+							"image": "seldonio/metadata-generic-node:0.4",
 							"resources": {
 								"requests": {
 									"cpu": "0.8",
@@ -60,7 +60,7 @@
 						},
 						{
 							"name": "model-translator",
-							"image": "seldonio/mock_classifier:1.5.0",
+							"image": "seldonio/metadata-generic-node:0.4",
 							"resources": {
 								"requests": {
 									"cpu": "0.8",
