@@ -41,6 +41,7 @@
 						{
 							"name": "model-translator",
 							"image": "sachinmv31/mock-model:latest",
+							"imagePullPolicy":"Always",
 							"resources": {
 								"requests": {
 									"cpu": "0.8",
