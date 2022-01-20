@@ -14,6 +14,11 @@
 		"predictors": [{
 			"name": "default",
 			"graph": {
+				"name": "model-translator-post",
+				"logger": {
+					"mode": "all"
+				},
+				"children": [{
 					"name": "model-translator",
 					"logger": {
 						"mode": "all"
@@ -26,7 +31,9 @@
 						}
 					}],
 					"type": "TRANSFORMER"
-				
+				}],
+				"type": "OUTPUT_TRANSFORMER"
+
 			},
 			"componentSpecs": [{
 				"metadata": {
@@ -41,7 +48,22 @@
 						{
 							"name": "model-translator",
 							"image": "sachinmv31/mock-model:latest",
-							"imagePullPolicy":"Always",
+							"imagePullPolicy": "Always",
+							"resources": {
+								"requests": {
+									"cpu": "0.8",
+									"memory": "1Gi"
+								},
+								"limits": {
+									"cpu": "1",
+									"memory": "2Gi"
+								}
+							}
+						},
+						{
+							"name": "model-translator-post",
+							"image": "sachinmv31/mock-model:latest",
+							"imagePullPolicy": "Always",
 							"resources": {
 								"requests": {
 									"cpu": "0.8",
