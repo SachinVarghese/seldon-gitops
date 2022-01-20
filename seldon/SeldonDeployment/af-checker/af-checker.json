@@ -14,11 +14,6 @@
 		"predictors": [{
 			"name": "default",
 			"graph": {
-				"name": "model-translator-post",
-				"logger": {
-					"mode": "all"
-				},
-				"children": [{
 					"name": "model-translator",
 					"logger": {
 						"mode": "all"
@@ -31,8 +26,7 @@
 						}
 					}],
 					"type": "INPUT_TRANSFORMER"
-				}],
-				"type": "OUTPUT_TRANSFORMER"
+				
 			},
 			"componentSpecs": [{
 				"metadata": {
@@ -43,20 +37,6 @@
 							"name": "af-model",
 							"image": "michaelseldon/mock-model:latest",
 							"resources": {}
-						},
-						{
-							"name": "model-translator-post",
-							"image": "michaelseldon/mock-model:latest",
-							"resources": {
-								"requests": {
-									"cpu": "0.8",
-									"memory": "1Gi"
-								},
-								"limits": {
-									"cpu": "1",
-									"memory": "2Gi"
-								}
-							}
 						},
 						{
 							"name": "model-translator",
