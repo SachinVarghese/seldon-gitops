@@ -25,7 +25,7 @@
 							"mode": "all"
 						}
 					}],
-					"type": "INPUT_TRANSFORMER"
+					"type": "TRANSFORMER"
 				
 			},
 			"componentSpecs": [{
